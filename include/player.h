@@ -2,15 +2,15 @@
 #define PLAYER_H
 #include "constants.h"
 
-class PLAYER
+class Player
 {
 public:
     float x, y;
     float width, height;
-    int speed;
+    int speed, score;
 
     // METHODS
-    PLAYER();
+    Player();
     void draw();
     void update();
 };

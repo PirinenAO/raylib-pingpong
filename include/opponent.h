@@ -2,11 +2,11 @@
 #define OPPONENT_H
 #include "player.h"
 
-class OPPONENT : public PLAYER
+class Opponent : public Player
 {
 public:
     // METHODS
-    OPPONENT();
+    Opponent();
     void update(int ball_x);
 };
 

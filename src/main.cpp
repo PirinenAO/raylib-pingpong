@@ -3,25 +3,35 @@
 #include "../include/player.h"
 #include "../include/constants.h"
 #include "../include/opponent.h"
+#include "../include/menu.h"
+#include <chrono>
 
 int main(void)
 {
-    BALL ball;
-    PLAYER player;
-    OPPONENT opponent;
+    Ball ball;
+    Player player;
+    Opponent opponent;
+    Menu menu;
 
     InitWindow(screenWidth, screenHeight, "Ping Pong");
 
     SetTargetFPS(60);
 
-    // Main game loop
+    while (menu.status && !WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        menu.update();
+        menu.draw();
+        EndDrawing();
+    }
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         // updating objects
-        ball.update();
+        ball.update(player);
         player.update();
         opponent.update(ball.x);
 
@@ -30,7 +40,7 @@ int main(void)
         {
             ball.y = player.y - ball.radius; // fixing the bug where the ball gets stuck inside paddle
             ball.speed_y *= -1;
-            ball.score++;
+            player.score++;
         }
 
         // if ball collides with opposing paddle
@@ -42,6 +52,7 @@ int main(void)
             if (ball.speed_y > 0)
             {
                 ball.speed_y++;
+                opponent.speed++;
             }
             else if (ball.speed_y < 0)
             {
@@ -53,7 +64,7 @@ int main(void)
         ball.draw();
         player.draw();
         opponent.draw();
-        DrawText(TextFormat("%i", ball.score), screenWidth / 2, screenHeight / 2 - 25, 50, LIGHTGRAY);
+        DrawText(TextFormat("%i", player.score), screenWidth / 2, screenHeight / 2 - 25, 50, LIGHTGRAY);
 
         EndDrawing();
     }

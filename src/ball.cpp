@@ -1,40 +1,42 @@
 #include "../include/ball.h"
+#include "../include/player.h"
 
-BALL::BALL()
+Ball::Ball()
 {
     radius = 10;
     x = screenWidth / 2 + 10;
     y = screenHeight / 2;
-    speed_x = 7;
-    speed_y = 7;
-    score = 0;
+    speed_x = 5;
+    speed_y = 5;
 }
 
-void BALL::draw()
+void Ball::draw()
 {
     DrawCircle(x, y, radius, RED);
 }
 
-void BALL::update()
+void Ball::update(Player &player)
 {
-    x += speed_x;
-    y += speed_y;
+
+    x -= speed_x;
+    y -= speed_y;
 
     // if player misses the ball
     if (y + radius >= screenHeight)
     {
         x = screenWidth / 2;
         y = screenHeight / 2;
-        speed_y = 7;
+        speed_y = 5;
         speed_x = speed_x * -1;
-        score = 0;
+        player.score = 0;
     }
     else if (y + radius <= 0)
     {
         x = screenWidth / 2;
         y = screenHeight / 2;
-        speed_y = 7;
-        speed_x = 7;
+        speed_y = 5;
+        speed_x = 5;
+        speed_x = speed_x * -1;
     }
 
     // reversing the direction of x when hitting side borders

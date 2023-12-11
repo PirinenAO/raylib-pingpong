@@ -1,21 +1,22 @@
 #include "../include/player.h"
 #include "../include/constants.h"
 
-PLAYER::PLAYER()
+Player::Player()
 {
     width = 100;
     height = 20;
     x = screenWidth / 2 - width / 2;
-    y = screenHeight - 50;
-    speed = 14;
+    y = screenHeight - width / 2;
+    speed = 12;
+    score = 0;
 }
 
-void PLAYER::draw()
+void Player::draw()
 {
     DrawRectangle(x, y, width, height, RED);
 }
 
-void PLAYER::update()
+void Player::update()
 {
     // reads user input
     if (IsKeyDown(KEY_A))

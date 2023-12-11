@@ -1,17 +1,18 @@
 #ifndef BALL_H
 #define BALL_H
 #include "constants.h"
+#include "player.h"
 
-class BALL
+class Ball
 {
 public:
     float x, y;
-    int speed_x, speed_y, score, radius;
+    int speed_x, speed_y, radius;
 
     // METHODS
-    BALL();
+    Ball();
     void draw();
-    void update();
+    void update(Player &player);
 };
 
 #endif
