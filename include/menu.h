@@ -9,7 +9,7 @@ class Menu
     const char *title_txt = "PING PONG";
     const char *start_text = "PRESS SPACE TO START";
     const char *ctrl_txt = "CONTROLS:";
-    const char *mvmt_txt = "A and B to move";
+    const char *mvmt_txt = "A and D to move";
     const char *exit_txt = "ESC to exit";
     const char *git_txt = "github.com/PirinenAO";
     float timer = 0.0;
