@@ -26,7 +26,7 @@ void Menu::draw()
 
     if (timer >= blinkInterval)
     {
-        timer = 0.0f;
+        timer = 0.0;
     }
 }
 
