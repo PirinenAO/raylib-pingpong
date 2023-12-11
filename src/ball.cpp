@@ -1,5 +1,6 @@
 #include "../include/ball.h"
 #include "../include/player.h"
+#include "../include/opponent.h"
 
 Ball::Ball()
 {
@@ -15,7 +16,7 @@ void Ball::draw()
     DrawCircle(x, y, radius, RED);
 }
 
-void Ball::update(Player &player)
+void Ball::update(Player &player, Opponent &opponent)
 {
 
     x -= speed_x;
@@ -27,8 +28,10 @@ void Ball::update(Player &player)
         x = screenWidth / 2;
         y = screenHeight / 2;
         speed_y = 5;
+        speed_x = 5;
         speed_x = speed_x * -1;
         player.score = 0;
+        opponent.speed = 5;
     }
     else if (y + radius <= 0)
     {
@@ -37,6 +40,7 @@ void Ball::update(Player &player)
         speed_y = 5;
         speed_x = 5;
         speed_x = speed_x * -1;
+        opponent.speed = 5;
     }
 
     // reversing the direction of x when hitting side borders

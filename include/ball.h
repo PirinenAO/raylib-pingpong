@@ -2,6 +2,7 @@
 #define BALL_H
 #include "constants.h"
 #include "player.h"
+#include "opponent.h"
 
 class Ball
 {
@@ -12,7 +13,7 @@ public:
     // METHODS
     Ball();
     void draw();
-    void update(Player &player);
+    void update(Player &player, Opponent &opponent);
 };
 
 #endif
