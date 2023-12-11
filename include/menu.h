@@ -12,8 +12,8 @@ class Menu
     const char *ctrl_txt = "CONTROLS:";
     const char *mvmt_txt = "A and B to move";
     const char *exit_txt = "ESC to exit";
-    float timer = 0.0f;
-    float blinkInterval = 2.0f; // Blink every 1 second
+    float timer = 0.0;
+    float blinkInterval = 2.0;
 
 public:
     bool status;
