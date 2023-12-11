@@ -1,6 +1,5 @@
 #ifndef MENU_H
 #define MENU_H
-#include "constants.h"
 
 class Menu
 {
@@ -12,6 +11,7 @@ class Menu
     const char *ctrl_txt = "CONTROLS:";
     const char *mvmt_txt = "A and B to move";
     const char *exit_txt = "ESC to exit";
+    const char *git_txt = "github.com/PirinenAO";
     float timer = 0.0;
     float blinkInterval = 2.0;
 

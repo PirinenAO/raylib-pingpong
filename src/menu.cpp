@@ -1,4 +1,6 @@
 #include "../include/menu.h"
+#include "../include/window.h"
+
 #include "raylib.h"
 
 Menu::Menu()
@@ -14,12 +16,13 @@ void Menu::draw()
 
     if (timer <= 1)
     {
-        DrawText(start_text, (screenWidth / 2) - MeasureText(start_text, start_txt_size) / 2, (screenHeight / 2) - 70, start_txt_size, LIGHTGRAY);
+        DrawText(start_text, (screenWidth / 2) - MeasureText(start_text, start_txt_size) / 2, (screenHeight / 2) - 70, start_txt_size, BLACK);
     }
 
-    DrawText(ctrl_txt, (screenWidth / 2) - MeasureText(ctrl_txt, ctrl_txt_size) / 2, screenHeight / 2, ctrl_txt_size, LIGHTGRAY);
-    DrawText(mvmt_txt, (screenWidth / 2) - MeasureText(mvmt_txt, ctrl_txt_size) / 2, screenHeight / 2 + 30, ctrl_txt_size, LIGHTGRAY);
-    DrawText(exit_txt, (screenWidth / 2) - MeasureText(exit_txt, ctrl_txt_size) / 2, screenHeight / 2 + 60, ctrl_txt_size, LIGHTGRAY);
+    DrawText(ctrl_txt, (screenWidth / 2) - MeasureText(ctrl_txt, ctrl_txt_size) / 2, screenHeight / 2, ctrl_txt_size, BLACK);
+    DrawText(mvmt_txt, (screenWidth / 2) - MeasureText(mvmt_txt, ctrl_txt_size) / 2, screenHeight / 2 + 30, ctrl_txt_size, BLACK);
+    DrawText(exit_txt, (screenWidth / 2) - MeasureText(exit_txt, ctrl_txt_size) / 2, screenHeight / 2 + 60, ctrl_txt_size, BLACK);
+    DrawText(git_txt, (screenWidth / 2) - MeasureText(git_txt, ctrl_txt_size) / 2, screenHeight - 30, ctrl_txt_size, BLACK);
 
     if (timer >= blinkInterval)
     {

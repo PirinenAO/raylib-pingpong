@@ -1,5 +1,6 @@
 #include "../include/player.h"
-#include "../include/constants.h"
+#include "../include/window.h"
+#include "raylib.h"
 
 Player::Player()
 {

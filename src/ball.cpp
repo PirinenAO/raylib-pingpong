@@ -1,6 +1,8 @@
 #include "../include/ball.h"
 #include "../include/player.h"
 #include "../include/opponent.h"
+#include "../include/window.h"
+#include "raylib.h"
 
 Ball::Ball()
 {

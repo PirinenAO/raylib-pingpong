@@ -1,4 +1,5 @@
 #include "../include/opponent.h"
+#include "../include/window.h"
 
 Opponent::Opponent()
 {
