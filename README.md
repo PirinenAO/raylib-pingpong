@@ -1,7 +1,6 @@
 # Ping pong
 
-Simple table tennis game made with C++ and raylib, where you face off<br> against the computer, 
-and as the game progresses, the speed increases with<br> each hit from your opponent.
+Simple table tennis game made with C++ and raylib library.
 
 <br>
 
